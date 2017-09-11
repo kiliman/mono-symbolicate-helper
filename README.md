@@ -43,13 +43,13 @@ Submit your request to the helper service and the response will be the de-obfusc
 
 ## Chrome Extension
 
-I have a proof-of-concept Chrome extension that will automatically capture
-the stack trace from sites like Crashlytics. I'm working on one for HockeyApp.
+I have published a Chrome extension that will automatically capture
+the stack trace from HockeyApp.
 
 This extension will grab the stack trace and send it to the helper then update
 the existing page with the de-obfuscated stack trace automatically.
 
-I will post this once I clean it up. It's still very much a work-in-progress.
+You can find it on the [Chrome Web Store](https://chrome.google.com/webstore/detail/monosymbolicatehelper-hoc/jjnnmicghifjnnaecpeamlhpmpleiphb/related?hl=en-US&gl=US).
 
 ## Contact
 
