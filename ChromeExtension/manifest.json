@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "MonoSymbolicateHelper-HockeyApp",
+  "short_name": "msh",
+  "description": "This extension symbolicates stack traces from Xamarin.Android on HockeyApp.",
+  "version": "1.0",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["tabs", "storage", "http://*/", "https://*/"],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": ["https://rink.hockeyapp.net/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
