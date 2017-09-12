@@ -49,7 +49,7 @@ the stack trace from HockeyApp.
 This extension will grab the stack trace and send it to the helper then update
 the existing page with the de-obfuscated stack trace automatically.
 
-You can find it on the [Chrome Web Store](https://chrome.google.com/webstore/detail/monosymbolicatehelper-hoc/jjnnmicghifjnnaecpeamlhpmpleiphb/related?hl=en-US&gl=US).
+You can find it on the [Chrome Web Store](https://chrome.google.com/webstore/detail/monosymbolicatehelper-hoc/jjnnmicghifjnnaecpeamlhpmpleiphb).
 
 ## Contact
 
