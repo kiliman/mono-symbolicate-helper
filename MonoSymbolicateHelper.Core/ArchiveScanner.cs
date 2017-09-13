@@ -40,7 +40,9 @@ namespace MonoSymbolicateHelper.Core
         {
             var filePath = Path.Combine(projectFolder, "archive.xml");
             var info = new ArchiveInfo {ArchivePath = projectFolder};
-            using (var reader = XmlReader.Create(File.OpenRead(filePath)))
+
+            using (var fs = File.OpenRead(filePath))
+            using (var reader = XmlReader.Create(fs))
             {
                 while (reader.Read())
                 {
