@@ -6,6 +6,7 @@
         public string PackageName { get; set; }
         public string PackageVersionCode { get; set; }
         public string PackageVersionName { get; set; }
+        public long CreationDate { get; set; }
 
         public string ArchivePath { get; set; }
         public string mSymPath => $@"{ArchivePath}\mSYM\{PackageName}.apk.mSYM";

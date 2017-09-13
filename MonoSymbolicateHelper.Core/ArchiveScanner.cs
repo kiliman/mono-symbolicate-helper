@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 
@@ -23,7 +24,15 @@ namespace MonoSymbolicateHelper.Core
                 foreach (var projectFolder in Directory.EnumerateDirectories(dateFolder))
                 {
                     var info = ReadArchiveInfo(projectFolder);
-
+                    // check if existing archive for this key and only keep latest creation date
+                    if (_archives.ContainsKey(info.Key))
+                    {
+                        var exist = _archives[info.Key];
+                        if (exist.CreationDate > info.CreationDate)
+                        {
+                            continue;
+                        }
+                    }
                     _archives[info.Key] = info;
                 }
             }
@@ -62,6 +71,9 @@ namespace MonoSymbolicateHelper.Core
                                     break;
                                 case "PackageVersionName":
                                     info.PackageVersionName = reader.ReadElementContentAsString();
+                                    break;
+                                case "CreationDate":
+                                    info.CreationDate = Convert.ToInt64(reader.ReadElementContentAsString());
                                     break;
                             }
                             break;
